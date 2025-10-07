@@ -153,20 +153,20 @@ namespace BasesDeDatos
                 IDataReader reader = cmd.ExecuteReader();
                 List<Inventario> inventarios = new List<Inventario>();
 
-            while (reader.Read())
-            {
-                inventarios.Add(new Inventario(reader)
+                while (reader.Read())
                 {
-                    ID = Convert.ToInt32(reader["ID"]),
-                    Nombre = reader["Nom_Producto"].ToString(),
-                    Descripcion = Convert.ToString(reader["Descripcion"]),
-                    Precio = Convert.ToDecimal(reader["Precio"]),
-                    NombreProveedor = reader["NombreProveedor"].ToString(),
-                    NombreCategoria = reader["NombreCategoria"].ToString(),
-                    Cantidad = Convert.ToInt32(reader["cantidad"]),
-                    Total = Convert.ToDecimal(reader["TOTAL"])
-                });
-            }
+                    inventarios.Add(new Inventario(reader)
+                    {
+                        ID = Convert.ToInt32(reader["ID"]),
+                        Nombre = reader["Nom_Producto"].ToString(),
+                        Descripcion = Convert.ToString(reader["Descripcion"]),
+                        Precio = Convert.ToDecimal(reader["Precio"]),
+                        NombreProveedor = reader["NombreProveedor"].ToString(),
+                        NombreCategoria = reader["NombreCategoria"].ToString(),
+                        Cantidad = Convert.ToInt32(reader["cantidad"]),
+                        Total = Convert.ToDecimal(reader["TOTAL"])
+                    });
+                }
 
                 reader.Close(); // Cerrar el reader después de usarlo
                 sqlConnection.Close(); // Cerrar la conexión después de usarla

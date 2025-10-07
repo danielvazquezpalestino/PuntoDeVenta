@@ -1,6 +1,16 @@
 ﻿using BasesDeDatos;
 using Entidades;
-using Microsoft.Data.SqlClient; // Correcto para .NET 9
+using Microsoft.Data.SqlClient;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
 namespace Control_de_inventario
 {
     public partial class formularioCarrito : Form
@@ -87,40 +97,56 @@ namespace Control_de_inventario
 
             }
         }
-        
+
         private void CargarMetodosPagoEnComboBox()
         {
-            // Limpiar el ComboBox antes de llenarlo
-            comboBox1.Items.Clear();
-
-            // Agregar un item predeterminado al ComboBox (opcional)
-            comboBox1.Items.Add("Seleccione un método de pago");
-
+            // Crear la conexión a la base de datos
+            SqlConnection sqlConnection = new SqlConnection(Coneccion.CadenaConexion);
             try
             {
-                using (SqlConnection sqlConnection = new SqlConnection(Coneccion.CadenaConexion))
-                {
-                    sqlConnection.Open();
+                // Abrir la conexión
+                sqlConnection.Open();
 
-                    using (SqlCommand cmd = new SqlCommand("SELECT Forma FROM dbo.Metodo_Pago", sqlConnection))
-                    {
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                comboBox1.Items.Add(reader["Forma"].ToString());
-                            }
-                        }
-                    }
+                // Crear el comando SQL para obtener los métodos de pago
+                SqlCommand cmd = new SqlCommand("SELECT Forma FROM dbo.Metodo_Pago", sqlConnection);
+
+                // Ejecutar la consulta y obtener un DataReader
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                // Limpiar el ComboBox antes de llenarlo
+                comboBox1.Items.Clear();
+
+                // Agregar un item predeterminado al ComboBox (opcional)
+                comboBox1.Items.Add("Seleccione un método de pago");
+
+                // Leer los datos y llenar el ComboBox
+                while (reader.Read())
+                {
+                    // Agregar cada método de pago al ComboBox
+                    comboBox1.Items.Add(reader["Forma"].ToString());
                 }
+
+                // Establecer el primer item como seleccionado (opcional)
+                comboBox1.SelectedIndex = 0;
+
+                // Cerrar el DataReader
+                reader.Close();
             }
             catch (Exception ex)
             {
-                // Manejar la excepción (mostrar mensaje, registrar error, etc.)
-                MessageBox.Show($"Error al cargar métodos de pago: {ex.Message}");
+                // Manejo de errores
+                MessageBox.Show("Error al cargar los métodos de pago: " + ex.Message);
+            }
+            finally
+            {
+                // Cerrar la conexión si está abierta
+                if (sqlConnection.State == ConnectionState.Open)
+                {
+                    sqlConnection.Close();
+                }
             }
         }
-        
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -131,6 +157,11 @@ namespace Control_de_inventario
             ProductoDataSource orden = new ProductoDataSource();
             List<OrdenCompra> ordenes = orden.ObtenerOrdenesCompra();
             dataGridView1.DataSource = ordenes;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

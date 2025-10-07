@@ -53,7 +53,7 @@ namespace Control_de_inventario
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(Coneccion.CadenaConexion   ))
+                    using (SqlConnection connection = new SqlConnection(Coneccion.CadenaConexion))
                 {
                     connection.Open();
 

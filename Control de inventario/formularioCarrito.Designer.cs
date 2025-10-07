@@ -46,23 +46,24 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.Cyan;
+            label1.BackColor = SystemColors.ActiveCaption;
             label1.FlatStyle = FlatStyle.Popup;
-            label1.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(444, 21);
+            label1.Location = new Point(553, 18);
             label1.Name = "label1";
-            label1.Size = new Size(186, 33);
+            label1.Size = new Size(115, 28);
             label1.TabIndex = 0;
             label1.Text = "Inventario";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Showcard Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(22, 88);
+            label2.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
+            label2.Location = new Point(25, 117);
             label2.Name = "label2";
-            label2.Size = new Size(229, 28);
+            label2.Size = new Size(187, 28);
             label2.TabIndex = 4;
             label2.Text = "Buscar Productos";
             // 
@@ -70,9 +71,9 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial Black", 12F, FontStyle.Bold);
-            label6.Location = new Point(40, 191);
+            label6.Location = new Point(399, 241);
             label6.Name = "label6";
-            label6.Size = new Size(89, 23);
+            label6.Size = new Size(109, 28);
             label6.TabIndex = 8;
             label6.Text = "Cantidad";
             label6.Click += label6_Click;
@@ -80,11 +81,10 @@
             // btnBuscar
             // 
             btnBuscar.BackColor = Color.DarkGray;
-            btnBuscar.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnBuscar.Location = new Point(410, 130);
-            btnBuscar.Margin = new Padding(3, 2, 3, 2);
+            btnBuscar.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
+            btnBuscar.Location = new Point(36, 232);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(248, 34);
+            btnBuscar.Size = new Size(283, 45);
             btnBuscar.TabIndex = 9;
             btnBuscar.Text = "Mostrar Productos";
             btnBuscar.UseVisualStyleBackColor = false;
@@ -92,21 +92,20 @@
             // 
             // txtTotal
             // 
-            txtTotal.Location = new Point(153, 187);
-            txtTotal.Margin = new Padding(3, 2, 3, 2);
+            txtTotal.Location = new Point(514, 241);
             txtTotal.Multiline = true;
             txtTotal.Name = "txtTotal";
-            txtTotal.Size = new Size(168, 27);
+            txtTotal.Size = new Size(191, 35);
             txtTotal.TabIndex = 10;
             // 
             // btnSalir
             // 
+            btnSalir.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSalir.BackColor = Color.Red;
-            btnSalir.Font = new Font("Showcard Gothic", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnSalir.Location = new Point(1002, 455);
-            btnSalir.Margin = new Padding(3, 2, 3, 2);
+            btnSalir.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
+            btnSalir.Location = new Point(1145, 607);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(99, 31);
+            btnSalir.Size = new Size(113, 41);
             btnSalir.TabIndex = 13;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
@@ -114,32 +113,31 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(53, 233);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.Location = new Point(61, 311);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(883, 253);
+            dataGridView1.Size = new Size(1009, 337);
             dataGridView1.TabIndex = 14;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
             // 
             // txtBusquedaProducto
             // 
-            txtBusquedaProducto.Location = new Point(292, 79);
-            txtBusquedaProducto.Margin = new Padding(3, 2, 3, 2);
+            txtBusquedaProducto.Location = new Point(334, 105);
             txtBusquedaProducto.Multiline = true;
             txtBusquedaProducto.Name = "txtBusquedaProducto";
-            txtBusquedaProducto.Size = new Size(673, 38);
+            txtBusquedaProducto.Size = new Size(769, 49);
             txtBusquedaProducto.TabIndex = 15;
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button1.BackColor = Color.Chartreuse;
-            button1.Font = new Font("Showcard Gothic", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            button1.Location = new Point(976, 233);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
+            button1.Location = new Point(1115, 311);
             button1.Name = "button1";
-            button1.Size = new Size(99, 31);
+            button1.Size = new Size(113, 41);
             button1.TabIndex = 17;
             button1.Text = "Vender";
             button1.UseVisualStyleBackColor = false;
@@ -149,29 +147,31 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial Black", 12F, FontStyle.Bold);
-            label3.Location = new Point(382, 191);
+            label3.Location = new Point(769, 245);
             label3.Name = "label3";
-            label3.Size = new Size(153, 23);
+            label3.Size = new Size(185, 28);
             label3.TabIndex = 18;
             label3.Text = "Metodo de Pago";
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(556, 194);
+            comboBox1.Location = new Point(971, 251);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(225, 23);
+            comboBox1.Size = new Size(257, 28);
             comboBox1.TabIndex = 19;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // button2
             // 
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button2.BackColor = Color.DarkGray;
-            button2.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(968, 286);
-            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.FlatStyle = FlatStyle.System;
+            button2.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
+            button2.Location = new Point(1106, 381);
             button2.Name = "button2";
-            button2.Size = new Size(133, 56);
+            button2.Size = new Size(152, 75);
             button2.TabIndex = 20;
             button2.Text = "Mostrar Ventas";
             button2.UseVisualStyleBackColor = false;
@@ -179,9 +179,10 @@
             // 
             // formularioCarrito
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1161, 506);
+            BackgroundImage = Properties.Resources.Imagen_de_WhatsApp_2025_03_26_a_las_20_04_48_67087795;
+            ClientSize = new Size(1327, 675);
             Controls.Add(button2);
             Controls.Add(comboBox1);
             Controls.Add(label3);
@@ -194,7 +195,6 @@
             Controls.Add(label6);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "formularioCarrito";
             Text = "formularioCarrito";
             Load += formularioCarrito_Load;

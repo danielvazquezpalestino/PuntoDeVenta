@@ -254,6 +254,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.Imagen_de_WhatsApp_2025_03_26_a_las_20_04_48_67087795;
             ClientSize = new Size(1400, 450);
             Controls.Add(btnMostrar);
             Controls.Add(dataGridView1);
