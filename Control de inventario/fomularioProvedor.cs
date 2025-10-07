@@ -16,7 +16,7 @@ namespace Control_de_inventario
         {
             InitializeComponent();
         }
-        SqlConnection connection = new SqlConnection(Coneccion.CadenaConexion);
+        SqlConnection connection = new SqlConnection(Conexion.CadenaConexion);
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -53,7 +53,7 @@ namespace Control_de_inventario
         {
             try
             {
-                    using (SqlConnection connection = new SqlConnection(Coneccion.CadenaConexion))
+                    using (SqlConnection connection = new SqlConnection(Conexion.CadenaConexion))
                 {
                     connection.Open();
 
@@ -147,7 +147,7 @@ namespace Control_de_inventario
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(Coneccion.CadenaConexion))
+                using (SqlConnection connection = new SqlConnection(Conexion.CadenaConexion))
                 {
                     connection.Open();
 
@@ -182,7 +182,7 @@ namespace Control_de_inventario
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(Coneccion.CadenaConexion))
+                using (SqlConnection connection = new SqlConnection(Conexion.CadenaConexion))
                 {
                     connection.Open();
 
@@ -226,7 +226,7 @@ namespace Control_de_inventario
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(Coneccion.CadenaConexion))
+                using (SqlConnection connection = new SqlConnection(Conexion.CadenaConexion))
                 {
                     connection.Open();
 

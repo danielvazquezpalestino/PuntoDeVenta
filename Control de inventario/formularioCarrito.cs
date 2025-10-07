@@ -101,7 +101,7 @@ namespace Control_de_inventario
         private void CargarMetodosPagoEnComboBox()
         {
             // Crear la conexión a la base de datos
-            SqlConnection sqlConnection = new SqlConnection(Coneccion.CadenaConexion);
+            SqlConnection sqlConnection = new SqlConnection(Conexion.CadenaConexion);
             try
             {
                 // Abrir la conexión

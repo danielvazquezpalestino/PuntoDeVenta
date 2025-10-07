@@ -9,7 +9,7 @@ namespace BasesDeDatos
     {
         public void GuardarProducto(Producto producto)
         {
-            SqlConnection sqlConnection = new SqlConnection(Coneccion.CadenaConexion);
+            SqlConnection sqlConnection = new SqlConnection(Conexion.CadenaConexion);
             if (sqlConnection.State == ConnectionState.Closed)
             {
                 sqlConnection.Open();
@@ -25,7 +25,7 @@ namespace BasesDeDatos
 
         public List<Producto> ConsultarProducto()
         {
-            SqlConnection sqlConnection = new SqlConnection(Coneccion.CadenaConexion);
+            SqlConnection sqlConnection = new SqlConnection(Conexion.CadenaConexion);
             if (sqlConnection.State == ConnectionState.Closed)
             {
                 sqlConnection.Open();
@@ -54,7 +54,7 @@ namespace BasesDeDatos
 
         public List<Inventario> ConsultarProductoInformacion()
         {
-            SqlConnection sqlConnection = new SqlConnection(Coneccion.CadenaConexion);
+            SqlConnection sqlConnection = new SqlConnection(Conexion.CadenaConexion);
             if (sqlConnection.State == ConnectionState.Closed)
             {
                 sqlConnection.Open();
@@ -95,7 +95,7 @@ namespace BasesDeDatos
 
         public List<Inventario> ConsultarProductoInformacion(string nombre)
         {
-            SqlConnection sqlConnection = new SqlConnection(Coneccion.CadenaConexion);
+            SqlConnection sqlConnection = new SqlConnection(Conexion.CadenaConexion);
             if (sqlConnection.State == ConnectionState.Closed)
             {
                 sqlConnection.Open();
@@ -135,7 +135,7 @@ namespace BasesDeDatos
         }
             public List<Inventario> ConsultarProductocompleto()
             {
-                SqlConnection sqlConnection = new SqlConnection(Coneccion.CadenaConexion);
+                SqlConnection sqlConnection = new SqlConnection(Conexion.CadenaConexion);
                 if (sqlConnection.State == ConnectionState.Closed)
                 {
                     sqlConnection.Open();
@@ -176,7 +176,7 @@ namespace BasesDeDatos
 
         public void ActualizarProducto(Producto producto)
         {
-            using (SqlConnection sqlConnection = new SqlConnection(Coneccion.CadenaConexion))
+            using (SqlConnection sqlConnection = new SqlConnection(Conexion.CadenaConexion))
             {
                 if (sqlConnection.State == ConnectionState.Closed)
                 {
@@ -204,7 +204,7 @@ namespace BasesDeDatos
         {
             List<Producto> productos = new List<Producto>();
 
-            using (SqlConnection sqlConnection = new SqlConnection(Coneccion.CadenaConexion))
+            using (SqlConnection sqlConnection = new SqlConnection(Conexion.CadenaConexion))
             {
                 sqlConnection.Open();
 
@@ -239,7 +239,7 @@ namespace BasesDeDatos
 
         public string advertencia()
         {
-            SqlConnection sqlConnection = new SqlConnection(Coneccion.CadenaConexion);
+            SqlConnection sqlConnection = new SqlConnection(Conexion.CadenaConexion);
             if (sqlConnection.State == ConnectionState.Closed)
             {
                 sqlConnection.Open();
@@ -285,7 +285,7 @@ namespace BasesDeDatos
         public void Guardarcarrito(OrdenCompra orden, int cantidad)
         {
             string fecha = orden.FechaCompra.ToString("yyyy-MM-dd");
-            SqlConnection sqlConnection = new SqlConnection(Coneccion.CadenaConexion);
+            SqlConnection sqlConnection = new SqlConnection(Conexion.CadenaConexion);
             if (sqlConnection.State == ConnectionState.Closed)
             {
                 sqlConnection.Open();
@@ -300,7 +300,7 @@ namespace BasesDeDatos
 
         public void ActualizarInventario(int id, int cantidad)
         {
-            SqlConnection sqlConnection = new SqlConnection(Coneccion.CadenaConexion);
+            SqlConnection sqlConnection = new SqlConnection(Conexion.CadenaConexion);
             if (sqlConnection.State == ConnectionState.Closed)
             {
                 sqlConnection.Open();
@@ -315,7 +315,7 @@ namespace BasesDeDatos
         {
             List<OrdenCompra> ordenesCompra = new List<OrdenCompra>();
 
-            using (SqlConnection sqlConnection = new SqlConnection(Coneccion.CadenaConexion))
+            using (SqlConnection sqlConnection = new SqlConnection(Conexion.CadenaConexion))
             {
                 sqlConnection.Open();
 
